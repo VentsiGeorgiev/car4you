@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600;700&family=Roboto:wght@100;300;400;500;700&display=swap');
+
+// Fonts
+$Roboto: 'Roboto', sans-serif;
+$RobotoMono: 'Roboto Mono', monospace;
+
+// Colors
+$primary-clr: #FECD45;
+$secondary-clr: #2568FB;
+$white: #fff;
+$dark: #1D2228;
+
+@mixin breakpoint($point) {
+  @if $point ==md {
+
+    // 768px
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+}
