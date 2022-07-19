@@ -1,9 +1,43 @@
 import { BiMenuAltRight } from 'react-icons/bi';
 import { AiOutlineClose } from 'react-icons/ai';
 import classes from './Header.module.scss';
+import { useEffect, useState } from 'react';
 
 
 function Header() {
+
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [size, setSize] = useState({
+    width: undefined,
+    height: undefined
+  });
+
+  useEffect(() => {
+
+    const handleResize = () => {
+      setSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      })
+    };
+    window.addEventListener("resize", handleResize)
+
+    return () => window.removeEventListener("resize", handleResize)
+
+  }, [])
+
+  useEffect(() => {
+    if (size.width > 768 && menuOpen) {
+      setMenuOpen(false);
+    }
+  }, [size.width, menuOpen]);
+
+  const menuToggleHandler = () => {
+    setMenuOpen((x) => !x);
+  }
+
+
+
   return (
     <header className={classes.header}>
 
@@ -14,7 +48,7 @@ function Header() {
 
 
         {/* nav */}
-        <nav className={classes.header__content__nav}>
+        <nav className={`${classes.header__content__nav} ${menuOpen ? classes.isMenu : ''}`}>
           <ul role="list">
             <li>
               <a href="/">Link 1</a>
@@ -33,7 +67,7 @@ function Header() {
 
         {/* hamburger icon */}
         <div className={classes.header__content__toggle}>
-          <BiMenuAltRight />
+          {!menuOpen ? <BiMenuAltRight onClick={menuToggleHandler} /> : <AiOutlineClose onClick={menuToggleHandler} />}
         </div>
 
       </div>
