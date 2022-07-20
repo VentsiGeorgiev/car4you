@@ -3,6 +3,8 @@ import { AiOutlineClose } from 'react-icons/ai';
 import classes from './Header.module.scss';
 import { useEffect, useState } from 'react';
 
+import { Link } from 'react-router-dom';
+
 
 function Header() {
 
@@ -51,7 +53,7 @@ function Header() {
         <nav className={`${classes.header__content__nav} ${menuOpen ? classes.isMenu : ''}`}>
           <ul role="list">
             <li>
-              <a href="/">Link 1</a>
+              <Link to="/">Link 1</Link>
             </li>
             <li>
               <a href="/">Link 2</a>
