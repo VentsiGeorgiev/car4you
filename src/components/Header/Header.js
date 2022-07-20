@@ -53,17 +53,20 @@ function Header() {
         <nav className={`${classes.header__content__nav} ${menuOpen ? classes.isMenu : ''}`}>
           <ul role="list">
             <li>
-              <Link to="/">Link 1</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="/">Link 2</a>
+              <Link to="/offers">Offers</Link>
+            </li>
+            <li>
+              <Link to="/profile">Profile</Link>
             </li>
           </ul>
 
           {/* login/register */}
-          <button className={classes.header__content__profile}>
+          {/* <button className={classes.header__content__profile}>
             Link 3
-          </button>
+          </button> */}
 
         </nav>
 

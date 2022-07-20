@@ -9,6 +9,7 @@ $primary-clr: #FECD45;
 $secondary-clr: #2568FB;
 $white: #fff;
 $dark: #1D2228;
+$bg: #ABC0DF;
 
 @mixin breakpoint($point) {
   @if $point ==md {
