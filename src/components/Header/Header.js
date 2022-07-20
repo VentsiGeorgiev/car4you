@@ -3,7 +3,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import classes from './Header.module.scss';
 import { useEffect, useState } from 'react';
 
-import { Link } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
 
 function Header() {
@@ -53,13 +53,34 @@ function Header() {
         <nav className={`${classes.header__content__nav} ${menuOpen ? classes.isMenu : ''}`}>
           <ul role="list">
             <li>
-              <Link to="/">Home</Link>
+              <NavLink
+                to="/"
+                style={({ isActive }) => ({
+                  color: isActive ? '#fff' : undefined
+                })}
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <Link to="/offers">Offers</Link>
+              <NavLink
+                to="/offers"
+                style={({ isActive }) => ({
+                  color: isActive ? '#fff' : undefined
+                })}
+              >
+                Offers
+              </NavLink>
             </li>
             <li>
-              <Link to="/profile">Profile</Link>
+              <NavLink
+                to="/profile"
+                style={({ isActive }) => ({
+                  color: isActive ? '#fff' : undefined
+                })}
+              >
+                Profile
+              </NavLink>
             </li>
           </ul>
 

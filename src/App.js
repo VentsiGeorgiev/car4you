@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Explore from "./pages/Explore/Explore";
 import Offers from "./pages/Offers/Offers";
 import Profile from "./pages/Profile/Profile";
+import Header from "./components/Header/Header";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/profile" element={<Profile />}></Route>
       </Routes>
     </Layout>
+
   );
 }
 

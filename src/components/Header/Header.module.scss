@@ -95,6 +95,10 @@
 
   }
 
+  &__content__activeStyle {
+    color: red;
+  }
+
   &__content__toggle {
     cursor: pointer;
     display: flex;
