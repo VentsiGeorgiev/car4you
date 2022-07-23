@@ -5,6 +5,7 @@ import Explore from "./pages/Explore/Explore";
 import Offers from "./pages/Offers/Offers";
 import Profile from "./pages/Profile/Profile";
 import Header from "./components/Header/Header";
+import SignIn from "./pages/SignIn/SignIn";
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Explore />}></Route>
         <Route path="/offers" element={<Offers />}></Route>
-        <Route path="/profile" element={<Profile />}></Route>
+        <Route path="/profile" element={<SignIn />}></Route>
       </Routes>
     </Layout>
 

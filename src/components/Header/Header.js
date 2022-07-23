@@ -46,7 +46,7 @@ function Header() {
       <div className={classes.header__content}>
 
         {/* logo */}
-        <h2 className={classes.header__content__logo}>car2you</h2>
+        <NavLink to="/" h2 className={classes.header__content__logo}>car4you</NavLink>
 
 
         {/* nav */}
@@ -58,6 +58,7 @@ function Header() {
                 style={({ isActive }) => ({
                   color: isActive ? '#fff' : undefined
                 })}
+                onClick={menuToggleHandler}
               >
                 Home
               </NavLink>
@@ -68,6 +69,7 @@ function Header() {
                 style={({ isActive }) => ({
                   color: isActive ? '#fff' : undefined
                 })}
+                onClick={menuToggleHandler}
               >
                 Offers
               </NavLink>
@@ -78,6 +80,7 @@ function Header() {
                 style={({ isActive }) => ({
                   color: isActive ? '#fff' : undefined
                 })}
+                onClick={menuToggleHandler}
               >
                 Profile
               </NavLink>
