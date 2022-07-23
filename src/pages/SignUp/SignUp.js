@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaUser, FaLock, FaEye, FaIdCardAlt } from 'react-icons/fa'
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { setDoc, doc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../firebase.config';
 import styles from './SignUp.module.scss';
 
@@ -36,6 +37,12 @@ function SignUp() {
       updateProfile(auth.currentUser, {
         displayName: name
       });
+
+      const formDataCopy = { ...formData };
+      delete formDataCopy.password;
+      formDataCopy.timestamp = serverTimestamp();
+
+      await setDoc(doc(db, 'users', user.uid), formDataCopy);
 
       navigate('/');
 
