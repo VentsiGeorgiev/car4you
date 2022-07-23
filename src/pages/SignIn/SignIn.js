@@ -28,7 +28,7 @@ function SignIn() {
 
       <main>
         <h1 className={styles.title}>Sing In</h1>
-        <form className={styles.signInForm}>
+        <form className={styles.form}>
           <div className={styles.field}>
             <FaUser />
             <input
@@ -42,7 +42,6 @@ function SignIn() {
 
             <FaLock />
             <input
-              className={styles.passwordInput}
               type={showPassword ? 'text' : 'password'}
               placeholder="Password"
               id="password"
@@ -53,7 +52,7 @@ function SignIn() {
           </div>
 
 
-          <div className={styles.forgotPassword}>
+          <div className={styles['forgot-password']}>
             <Link to="/forgot-password">Forgot Password?</Link>
           </div>
 

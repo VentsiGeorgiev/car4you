@@ -6,6 +6,7 @@ import Offers from "./pages/Offers/Offers";
 import Profile from "./pages/Profile/Profile";
 import Header from "./components/Header/Header";
 import SignIn from "./pages/SignIn/SignIn";
+import SignUp from "./pages/SignUp/SignUp";
 
 
 function App() {
@@ -15,6 +16,8 @@ function App() {
         <Route path="/" element={<Explore />}></Route>
         <Route path="/offers" element={<Offers />}></Route>
         <Route path="/profile" element={<SignIn />}></Route>
+        <Route path="/sign-up" element={<SignUp />}></Route>
+        <Route path="/sign-in" element={<SignIn />}></Route>
       </Routes>
     </Layout>
 
