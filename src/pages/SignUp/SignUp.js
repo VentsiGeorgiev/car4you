@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-
+import { FaUser, FaLock, FaEye, FaIdCardAlt } from 'react-icons/fa'
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { db } from '../../firebase.config';
 import styles from './SignUp.module.scss';
 
-import { FaUser, FaLock, FaEye, FaIdCardAlt } from 'react-icons/fa'
 
 function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
@@ -24,13 +25,33 @@ function SignUp() {
     }))
   }
 
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+
+      const auth = getAuth();
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      updateProfile(auth.currentUser, {
+        displayName: name
+      });
+
+      navigate('/');
+
+    } catch (error) {
+      console.log(error);
+    }
+
+  }
+
 
   return (
     <div className={styles.container}>
 
       <main>
         <h1 className={styles.title}>Sing Up</h1>
-        <form className={styles.form}>
+        <form onSubmit={onSubmit} className={styles.form}>
 
           <div className={styles.field}>
             <FaIdCardAlt />
