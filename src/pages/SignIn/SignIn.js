@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { FaUser, FaLock, FaEye } from 'react-icons/fa'
 import styles from './SignIn.module.scss'
 
-import { FaUser, FaLock, FaEye } from 'react-icons/fa'
 
 function SignIn() {
   const [showPassword, setShowPassword] = useState(false);
@@ -22,13 +24,30 @@ function SignIn() {
     }))
   }
 
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const auth = getAuth();
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+
+      if (userCredential.user) {
+        navigate('/')
+      }
+    } catch (error) {
+      toast.error('Error: Incorrect Username Or Password.')
+    }
+
+
+  }
+
 
   return (
     <div className={styles.container}>
 
       <main>
         <h1 className={styles.title}>Sing In</h1>
-        <form className={styles.form}>
+        <form onSubmit={onSubmit} className={styles.form}>
           <div className={styles.field}>
             <FaUser />
             <input
