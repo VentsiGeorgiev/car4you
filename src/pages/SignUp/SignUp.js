@@ -6,6 +6,7 @@ import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase
 import { setDoc, doc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../firebase.config';
 import styles from './SignUp.module.scss';
+import OAuth from '../../components/OAuth/OAuth';
 
 
 function SignUp() {
@@ -101,8 +102,10 @@ function SignUp() {
           </div> */}
 
           <div>
-            <button className={styles['sign-in']}>Sign In</button>
+            <button className={styles['sign-in']}>Sign Up</button>
           </div>
+
+          <OAuth />
 
           <div>
             <p>Already have an account ?</p>

@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-import { FaUser, FaLock, FaEye } from 'react-icons/fa'
-import styles from './SignIn.module.scss'
+import { FaUser, FaLock, FaEye } from 'react-icons/fa';
+import styles from './SignIn.module.scss';
+import OAuth from '../../components/OAuth/OAuth';
 
 
 function SignIn() {
@@ -78,6 +79,8 @@ function SignIn() {
           <div>
             <button>Sign In</button>
           </div>
+
+          <OAuth />
 
           <div>
             <p>Don't have an account yet?</p>
