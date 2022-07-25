@@ -4,6 +4,7 @@ import classes from './Header.module.scss';
 import { useEffect, useState } from 'react';
 
 import { NavLink } from "react-router-dom";
+import useAuthStatus from '../../hooks/useAuthStatus';
 
 
 function Header() {
@@ -13,6 +14,7 @@ function Header() {
     width: undefined,
     height: undefined
   });
+  const { loggedIn } = useAuthStatus();
 
   useEffect(() => {
 
@@ -46,7 +48,7 @@ function Header() {
       <div className={classes.header__content}>
 
         {/* logo */}
-        <NavLink to="/" h2 className={classes.header__content__logo}>car4you</NavLink>
+        <NavLink to="/" className={classes.header__content__logo}>car4you</NavLink>
 
 
         {/* nav */}
