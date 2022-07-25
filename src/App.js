@@ -8,6 +8,7 @@ import Profile from "./pages/Profile/Profile";
 import SignIn from "./pages/SignIn/SignIn";
 import SignUp from "./pages/SignUp/SignUp";
 import 'react-toastify/dist/ReactToastify.css';
+import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           </Route>
           <Route path="/sign-up" element={<SignUp />}></Route>
           <Route path="/sign-in" element={<SignIn />}></Route>
+          <Route path="/forgot-password" element={<ForgotPassword />}></Route>
         </Routes>
       </Layout>
       <ToastContainer />
