@@ -4,6 +4,7 @@ import Layout from "./components/Header/Layout";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Explore from "./pages/Explore/Explore";
 import Offers from "./pages/Offers/Offers";
+import Category from "./pages/Category/Category";
 import Profile from "./pages/Profile/Profile";
 import SignIn from "./pages/SignIn/SignIn";
 import SignUp from "./pages/SignUp/SignUp";
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Explore />}></Route>
           <Route path="/offers" element={<Offers />}></Route>
+          <Route path="/category/:categoryName" element={<Category />}></Route>
           <Route path="/profile" element={<PrivateRoute />}>
             <Route path="/profile" element={<Profile />} />
           </Route>
