@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { collection, getDocs, query, where, orderBy, limit } from 'firebase/firestore';
 import { db } from './../../firebase.config';
 import { toast } from 'react-toastify';
+import ListingItem from '../../components/ListingItem/ListingItem';
 
 function Category() {
   const [listings, setListings] = useState(null)
@@ -43,7 +44,9 @@ function Category() {
 
     fetchListings()
 
-  }, [])
+  }, [params.categoryName])
+
+  console.log(listings);
 
 
   return (
@@ -58,9 +61,14 @@ function Category() {
         ? <h3>Loading...</h3>
         : listings && listings.length > 0
           ? <>
+
             <ul>
               {listings.map((listing) => (
-                <h3>Make: {listing.data.make} model {listing.data.model}</h3>
+                <ListingItem
+                  key={listing.id}
+                  id={listing.id}
+                  listing={listing.data}
+                />
               ))}
             </ul>
           </>
