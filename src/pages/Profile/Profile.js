@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, updateProfile } from 'firebase/auth';
 import { db } from '../../firebase.config';
 import { doc, updateDoc } from 'firebase/firestore';
@@ -92,6 +92,12 @@ function Profile() {
             onChange={onChange}
           />
         </form>
+      </div>
+
+      <div>
+        <Link to='/create-listing'>
+          <h3>Sell or rent your car</h3>
+        </Link>
       </div>
 
     </main>
