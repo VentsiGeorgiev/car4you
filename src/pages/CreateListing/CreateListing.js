@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { toast } from 'react-toastify';
+
 
 function CreateListing() {
-  // const [geolocationEnabled, setGeolocationEnabled] = useState(true)
   const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
     type: 'rent',
@@ -44,7 +45,19 @@ function CreateListing() {
   const onSubmit = (e) => {
     e.preventDefault()
 
-    console.log(formData);
+    setLoading(true)
+
+    if (discountedPrice >= regularPrice) {
+      setLoading(false)
+      toast.error('Discounted price needs to be less than regular price')
+      return
+    }
+
+    if (images.length > 6) {
+      setLoading(false)
+      toast.error('Max 6 images')
+      return
+    }
   }
 
   const onMutate = (e) => {
@@ -130,6 +143,8 @@ function CreateListing() {
           id='km'
           value={km}
           onChange={onMutate}
+          min='0'
+          max='1000000'
         />
 
         <label className='formLabel'>Year</label>
@@ -138,6 +153,8 @@ function CreateListing() {
           id='year'
           value={year}
           onChange={onMutate}
+          min='1960'
+          max='2022'
         />
 
         <div>
