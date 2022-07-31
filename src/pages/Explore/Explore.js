@@ -18,7 +18,7 @@ function Explore() {
         </div>
 
         <div>
-          <Link to='/category/buy'>
+          <Link to='/category/sale'>
             <img src={buyACarImg} alt="Buy a car" />
           </Link>
           <h2>Buy a car</h2>

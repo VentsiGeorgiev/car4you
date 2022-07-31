@@ -46,7 +46,6 @@ function Offers() {
 
   }, [params.categoryName])
 
-  console.log(listings);
 
 
   return (

@@ -11,6 +11,7 @@ import SignUp from "./pages/SignUp/SignUp";
 import 'react-toastify/dist/ReactToastify.css';
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import CreateListing from "./pages/CreateListing/CreateListing";
+import Listing from "./pages/Listing/Listing";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/sign-in" element={<SignIn />}></Route>
           <Route path="/forgot-password" element={<ForgotPassword />}></Route>
           <Route path="/create-listing" element={<CreateListing />}></Route>
+          <Route path="/category/:categoryName/:listingId" element={<Listing />}></Route>
         </Routes>
       </Layout>
       <ToastContainer />

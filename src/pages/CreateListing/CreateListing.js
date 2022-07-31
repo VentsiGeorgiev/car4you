@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { v4 as uuidv4 } from 'uuid';
+import { db } from '../../firebase.config';
 
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import {
@@ -10,6 +11,7 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from 'firebase/storage';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 
 
 function CreateListing() {
@@ -64,7 +66,7 @@ function CreateListing() {
 
   const onSubmit = async (e) => {
     e.preventDefault()
-    console.log(formData)
+    // console.log(formData)
 
     setLoading(true)
 
@@ -129,26 +131,23 @@ function CreateListing() {
       return
     })
 
-    console.log(imgUrls)
-
     setLoading(false)
 
-    // const formDataCopy = {
-    //   ...formData,
-    //   imgUrls,
-    //   geolocation,
-    //   timestamp: serverTimestamp(),
-    // }
+    const formDataCopy = {
+      ...formData,
+      imgUrls,
+      timestamp: serverTimestamp(),
+    }
 
-    // formDataCopy.location = address
-    // delete formDataCopy.images
-    // delete formDataCopy.address
-    // !formDataCopy.offer && delete formDataCopy.discountedPrice
+    formDataCopy.location = address
+    delete formDataCopy.images
+    delete formDataCopy.address
+    !formDataCopy.offer && delete formDataCopy.discountedPrice
 
-    // const docRef = await addDoc(collection(db, 'listings'), formDataCopy)
-    // setLoading(false)
-    // toast.success('Listing saved')
-    // navigate(`/category/${formDataCopy.type}/${docRef.id}`)
+    const docRef = await addDoc(collection(db, 'listings'), formDataCopy)
+    setLoading(false)
+    toast.success('Listing saved')
+    navigate(`/category/${formDataCopy.type}/${docRef.id}`)
   }
 
   const onMutate = (e) => {

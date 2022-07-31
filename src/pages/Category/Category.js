@@ -46,7 +46,7 @@ function Category() {
 
   }, [params.categoryName])
 
-  console.log(listings);
+  // console.log(listings);
 
 
   return (
