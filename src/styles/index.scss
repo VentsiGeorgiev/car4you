@@ -58,6 +58,10 @@ body {
   display: block;
 }
 
+.sliderImgs {
+  object-fit: cover;
+}
+
 /* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

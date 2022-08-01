@@ -3,7 +3,15 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { getDoc, doc } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import { db } from '../../firebase.config';
-import { FaShareAlt } from 'react-icons/fa'
+import { FaShareAlt } from 'react-icons/fa';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import 'swiper/css/a11y';
 
 function Listing() {
   const [listing, setListing] = useState(null)
@@ -20,7 +28,6 @@ function Listing() {
       const docSnap = await getDoc(docRef);
 
       if (docSnap.exists()) {
-        console.log(docSnap.data());
         setListing(docSnap.data());
         setLoading(false)
       }
@@ -35,6 +42,35 @@ function Listing() {
 
   return (
     <div className="container">
+
+      <div className='carslider'>
+        {listing && (
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            slidesPerView={1}
+            pagination={{ clickable: true }}
+            navigation
+          // style={{ height: '40vh' }}
+          >
+            {listing.imgUrls.map((url, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  <div style={{
+                    width: '100%',
+                    margin: '0 auto'
+                  }}>
+                    <img className='sliderImgs' src={listing.imgUrls[index]} />
+                  </div>
+
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        )}
+
+      </div>
+
+
       <div onClick={
         () => {
           navigator.clipboard.writeText(window.location.href)
