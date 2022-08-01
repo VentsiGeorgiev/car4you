@@ -82,6 +82,18 @@ function Profile() {
       [e.target.id]: e.target.value
     }))
   }
+
+  const onDelete = async (listingId) => {
+    if (window.confirm('Are you sure you want to delete?')) {
+      await deleteDoc(doc(db, 'listings', listingId))
+      const updListings = listings.filter((listing) => listing.id !== listingId)
+      setListings(updListings)
+      toast.success('Successfully deleted')
+    }
+  }
+
+
+
   return (
 
     <main className="container">
@@ -138,7 +150,12 @@ function Profile() {
           <h3>Your Listings</h3>
           <ul>
             {listings.map((listing) => (
-              <ListingItem key={listing.id} listing={listing.data} />
+              <ListingItem
+                key={listing.id}
+                listing={listing.data}
+                id={listing.id}
+                onDelete={() => onDelete(listing.id)}
+              />
             ))}
           </ul>
         </div>
