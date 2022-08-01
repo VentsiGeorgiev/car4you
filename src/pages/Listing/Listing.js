@@ -61,7 +61,7 @@ function Listing() {
           <li>insurance: {listing.insurance ? 'Yes' : 'No'}</li>
         </ul>
         {auth.currentUser?.uid !== listing.userRef && (
-          <Link to={`/contact/${listing.userRef}?listingName=${listing.make}&listingLocation=${listing.location}`} >Contact owner</Link>
+          <Link to={`/contact/${listing.userRef}?listingName=${listing.make}`} >Contact owner</Link>
         )}
       </div>
     </div>
