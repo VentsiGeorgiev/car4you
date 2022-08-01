@@ -8,7 +8,7 @@ function Contact() {
   const [message, setMessage] = useState('');
   const [owner, setOwner] = useState('');
   // eslint-disable-next-line
-  const [searchParams, setSearchParams] = useSearchParams(null);
+  const [searchParams, setSearchParams] = useSearchParams({});
 
   const params = useParams()
 
@@ -25,7 +25,7 @@ function Contact() {
     }
 
     getOwner()
-  }, [params.landlordId])
+  }, [params.ownerId])
 
   const onChange = (e) => {
     setMessage(e.target.value)
@@ -51,8 +51,7 @@ function Contact() {
             >
             </textarea>
             <button type='button'>
-              <a href={`mailto:${owner.email}?Subject=${searchParams.get('listingName')}&body=${message}`} ></a>
-              Send Message
+              <a href={`mailto:${owner.email}?Subject=${searchParams.get('listingName')}&body=${message}`} >Send Message</a>
             </button>
 
           </form>
