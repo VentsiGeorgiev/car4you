@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { FaEuroSign } from 'react-icons/fa';
 
-function ListingItem({ listing, id, onDelete }) {
+function ListingItem({ listing, id, onDelete, onEdit }) {
 
   return (
     <div>
@@ -20,6 +20,15 @@ function ListingItem({ listing, id, onDelete }) {
           onClick={() => onDelete(listing.id, listing.name)}
         >
           Delete
+        </button>
+      )}
+
+      {onEdit && (
+        <button
+          type='button'
+          onClick={() => onEdit(listing.id)}
+        >
+          Edit
         </button>
       )}
 
