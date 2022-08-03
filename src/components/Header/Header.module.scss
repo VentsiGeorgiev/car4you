@@ -1,12 +1,11 @@
 @import '../../styles/variables.scss';
 
 .header {
-  background-color: $primary-clr;
+  background-color: $primary;
   width: 100%;
   min-width: 280px;
   max-width: 1920px;
   margin: 0 auto;
-  padding: 0 1rem;
 
   @include breakpoint(md) {
     padding: 0 3rem;
@@ -15,10 +14,11 @@
   transition: 0.3s ease all;
 
   &__content {
+    width: 90%;
+    margin: 0 auto;
     overflow: hidden;
-    color: $secondary-clr;
+    color: $white;
     display: flex;
-
     align-items: center;
     justify-content: space-between;
     height: 8vh;
@@ -28,6 +28,12 @@
 
   &__content__logo {
     font-size: 1.6rem;
+    color: $white;
+    font-weight: bold;
+  }
+
+  &__content__logo span {
+    color: $secondary;
   }
 
   &__content__nav {
@@ -68,8 +74,8 @@
       }
 
       li a {
-        color: $secondary-clr;
-        border-radius: 1px solid $secondary-clr;
+        color: $secondary;
+        border-radius: 1px solid $secondary;
         font-size: 1.2rem;
         margin-right: 15px;
 
@@ -96,7 +102,7 @@
   }
 
   &__content__activeStyle {
-    color: red;
+    color: $secondary;
   }
 
   &__content__toggle {
@@ -108,7 +114,7 @@
     position: relative;
 
     &:hover {
-      color: $secondary-clr;
+      color: $secondary;
     }
 
     @include breakpoint(md) {

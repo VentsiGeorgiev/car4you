@@ -4,8 +4,6 @@ import classes from './Header.module.scss';
 import { useEffect, useState } from 'react';
 
 import { NavLink } from "react-router-dom";
-import useAuthStatus from '../../hooks/useAuthStatus';
-
 
 function Header() {
 
@@ -14,7 +12,6 @@ function Header() {
     width: undefined,
     height: undefined
   });
-  const { loggedIn } = useAuthStatus();
 
   useEffect(() => {
 
@@ -40,20 +37,18 @@ function Header() {
     setMenuOpen((x) => !x);
   }
 
-
-
   return (
     <header className={classes.header}>
 
-      <div className={classes.header__content}>
+      <section className={classes.header__content}>
 
         {/* logo */}
-        <NavLink to="/" className={classes.header__content__logo}>car4you</NavLink>
+        <NavLink to="/" className={classes.header__content__logo}>Car<span>4</span>You</NavLink>
 
 
         {/* nav */}
-        <nav className={`${classes.header__content__nav} ${menuOpen ? classes.isMenu : ''}`}>
-          <ul role="list">
+        <nav className={`${classes.header__content__nav} ${menuOpen && size.width < 768 ? classes.isMenu : ''}`}>
+          <ul >
             <li>
               <NavLink
                 to="/"
@@ -101,7 +96,7 @@ function Header() {
           {!menuOpen ? <BiMenuAltRight onClick={menuToggleHandler} /> : <AiOutlineClose onClick={menuToggleHandler} />}
         </div>
 
-      </div>
+      </section>
 
     </header>
   )
