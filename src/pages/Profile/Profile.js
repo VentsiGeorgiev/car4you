@@ -4,9 +4,9 @@ import { getAuth, updateProfile } from 'firebase/auth';
 import { db } from '../../firebase.config';
 import { doc, updateDoc, collection, getDocs, query, where, orderBy, deleteDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
-import styles from './Profile.module.scss'
 import ListingItem from '../../components/ListingItem/ListingItem';
-
+import { FaUserEdit } from 'react-icons/fa'
+import styles from './Profile.module.scss'
 
 function Profile() {
   const auth = getAuth();
@@ -98,59 +98,61 @@ function Profile() {
 
   return (
 
-    <main className="container">
-      <div className={styles.wrapper}>
-        <div className={styles['wrapper__profile']}>
-          <h2 className={styles['wrapper__profile__title']}>My Profile</h2>
-          <button
-            className={styles['btn-logout']}
-            type='button'
-            onClick={onLogout}
-          >
-            Logout
-          </button>
-        </div>
+    <>
+      <div className={styles.profile}>
+        <h2>My Profile</h2>
+        <button
+          className='btn btn-primary'
+          type='button'
+          onClick={onLogout}
+        >
+          Logout
+        </button>
+      </div>
 
 
-        <div className={styles['wrapper__details']}>
-          <p >Personal Details</p>
-          <p className={styles['wrapper__details__change']} onClick={() => {
+      <div className={styles.profile__details}>
+        <h3>Personal Details</h3>
+
+      </div>
+      <form>
+        <input
+          type='text'
+          id='name'
+          className={!changeDetails ? 'profileName' : 'profileNameActive'}
+          disabled={!changeDetails}
+          value={name}
+          onChange={onChange}
+        />
+        <FaUserEdit
+          className={styles.userEditIcon}
+          onClick={() => {
             changeDetails && onSubmit()
             setChangeDetails((prevState) => !prevState)
           }}>
-            {changeDetails ? 'Done' : 'Change'}
-          </p>
-        </div>
-        <form>
-          <input
-            type='text'
-            id='name'
-            className={!changeDetails ? 'profileName' : 'profileNameActive'}
-            disabled={!changeDetails}
-            value={name}
-            onChange={onChange}
-          />
-          <input
-            type='text'
-            id='email'
-            className={!changeDetails ? 'profileEmail' : 'profileEmailActive'}
-            disabled={!changeDetails}
-            value={email}
-            onChange={onChange}
-          />
-        </form>
-      </div>
+          {changeDetails ? 'Done' : 'Change'}
+        </FaUserEdit>
+        {/* <input
+          type='text'
+          id='email'
+          className={!changeDetails ? 'profileEmail' : 'profileEmailActive'}
+          disabled={!changeDetails}
+          value={email}
+          onChange={onChange}
+        /> */}
+      </form>
 
-      <div>
+
+      <div className={styles.sellOrRent}>
         <Link to='/create-listing'>
-          <h3>Sell or rent your car</h3>
+          <h4>Sell or rent your car</h4>
         </Link>
       </div>
 
       {!loading && listings?.length > 0 && (
         <div>
           <h3>Your Listings</h3>
-          <ul>
+          <section className='cars'>
             {listings.map((listing) => (
               <ListingItem
                 key={listing.id}
@@ -161,11 +163,11 @@ function Profile() {
 
               />
             ))}
-          </ul>
+          </section>
         </div>
       )}
 
-    </main>
+    </>
   )
 }
 export default Profile

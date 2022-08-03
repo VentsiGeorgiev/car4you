@@ -16,25 +16,28 @@ function ListingItem({ listing, id, onDelete, onEdit }) {
             <p className={styles.car__price}>{listing.offer ? listing.discountedPrice : listing.regularPrice} <FaEuroSign className={styles.car__priceIcon} /></p>
           </div>
         </Link>}
+        {onDelete && (
+          <button
+            type='button'
+            className='btn btn-secondary'
+            onClick={() => onDelete(listing.id, listing.name)}
+          >
+            Delete
+          </button>
+        )}
+
+        {onEdit && (
+          <button
+            type='button'
+            className='btn btn-primary'
+            onClick={() => onEdit(listing.id)}
+          >
+            Edit
+          </button>
+        )}
       </div>
 
-      {onDelete && (
-        <button
-          type='button'
-          onClick={() => onDelete(listing.id, listing.name)}
-        >
-          Delete
-        </button>
-      )}
 
-      {onEdit && (
-        <button
-          type='button'
-          onClick={() => onEdit(listing.id)}
-        >
-          Edit
-        </button>
-      )}
 
     </>
   )

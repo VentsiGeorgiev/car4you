@@ -1,31 +1,38 @@
-.wrapper {
-  width: 60%;
+@import '../../styles/variables.scss';
+
+.profile {
+  display: flex;
+  justify-content: space-between;
+}
+
+.userEditIcon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: $dark;
+}
+
+.sellOrRent {
+  text-align: center;
+  padding: 10px 0;
+  margin-bottom: 20px;
+
+}
+
+.sellOrRent h4 {
+  width: 50%;
   margin: 0 auto;
+  padding: 10px;
+  font-size: 1.6rem;
+  border: 1px solid $primary;
+  border-radius: 22px;
+  color: $primary;
+}
 
-
-  &__profile {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
-    padding: 10px 0;
-  }
-
-  &__profile__title {
-    color: #fff;
-  }
-
-  &__details p {
-    display: inline-block;
-  }
-
-  &__details__change {
-    margin-left: 10px;
-    color: #000;
-    background-color: #eee;
-    padding: 2px 4px;
-    border-radius: 4px;
-    border: 1px solid black;
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
+.sellOrRent h4:hover {
+  color: $white;
+  background-color: $primary;
+  transition: 0.3s all ease-in;
 }

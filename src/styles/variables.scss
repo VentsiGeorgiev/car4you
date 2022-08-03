@@ -8,6 +8,7 @@ $primary: #202C45;
 $secondary: #E81C2E;
 $white: #ffffff;
 $dark: #444444;
+$gray: #a4a4a4;
 
 @mixin breakpoint($point) {
   @if $point ==md {
