@@ -44,11 +44,6 @@ body {
   margin: 10px;
 }
 
-.btnActive {
-  background-color: bisque;
-  color: #000;
-}
-
 .formLabel {
   margin-top: 8px;
   display: block;
@@ -72,9 +67,7 @@ body {
 
 .btn {
   border: none;
-  padding: 6px 32px;
   font-size: 1.2rem;
-  border-radius: 26px;
   font-weight: 500;
   cursor: pointer;
   transition: 0.3s ease-out;
@@ -83,6 +76,8 @@ body {
 .btn-primary {
   background-color: $white;
   border: 1px solid $primary;
+  padding: 8px 26px;
+  border-radius: 20px;
 }
 
 .btn-primary:hover {
@@ -96,11 +91,18 @@ body {
 .btn-secondary {
   background-color: $secondary;
   color: $white;
+  padding: 8px 26px;
+  border-radius: 20px;
 }
 
 .btn-secondary:hover {
   background-color: $primary;
   color: $secondary;
+}
+
+.btnActive {
+  background-color: $primary;
+  color: $white;
 }
 
 .profileName {
@@ -118,4 +120,9 @@ body {
   font-weight: 500;
   border: 1px solid $primary;
   border-radius: 8px;
+}
+
+.btn-form {
+  display: block;
+  margin: 20px 0;
 }

@@ -191,7 +191,7 @@ function CreateListing() {
         <div>
           <button
             type='button'
-            className={type === 'sale' ? 'btnActive' : ''}
+            className={type === 'sale' ? 'btn btnActive' : 'btn'}
             id='type'
             value='sale'
             onClick={onMutate}
@@ -200,7 +200,7 @@ function CreateListing() {
           </button>
           <button
             type='button'
-            className={type === 'rent' ? 'btnActive' : ''}
+            className={type === 'rent' ? 'btn btnActive' : 'btn'}
             id='type'
             value='rent'
             onClick={onMutate}
@@ -251,7 +251,7 @@ function CreateListing() {
           <label className='formLabel'>Insurance</label>
           <button
             type='button'
-            className={insurance ? 'btnActive' : ''}
+            className={insurance ? 'btn btnActive' : 'btn'}
             id='insurance'
             value={true}
             onClick={onMutate}
@@ -260,7 +260,7 @@ function CreateListing() {
           </button>
           <button
             type='button'
-            className={!insurance && insurance !== null ? 'btnActive' : ''}
+            className={!insurance && insurance !== null ? 'btn btnActive' : 'btn'}
             id='insurance'
             value={false}
             onClick={onMutate}
@@ -281,7 +281,7 @@ function CreateListing() {
         <div>
           <button
             type='button'
-            className={offer ? 'btnActive' : ''}
+            className={offer ? 'btn btnActive' : 'btn'}
             id='offer'
             value={true}
             onClick={onMutate}
@@ -291,7 +291,7 @@ function CreateListing() {
 
           <button
             type='button'
-            className={!offer && offer !== null ? 'btnActive' : ''}
+            className={!offer && offer !== null ? 'btn btnActive' : 'btn'}
             id='offer'
             value={false}
             onClick={onMutate}
@@ -330,7 +330,7 @@ function CreateListing() {
           multiple
         />
 
-        <button type='submit'>Create Listing</button>
+        <button className='btn btn-primary btn-form' type='submit'>Create Listing</button>
       </form>
     </div>
   )
