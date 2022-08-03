@@ -1,0 +1,13 @@
+@import '../../styles/variables.scss';
+
+.cars {
+  display: grid;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+
+  @include breakpoint(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}

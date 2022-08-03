@@ -1,0 +1,32 @@
+@import '../../styles/variables.scss';
+
+
+.car {
+  padding: 10px;
+  border: 1px solid $dark;
+  border-radius: 6px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  &__image {
+    height: 30vh;
+    width: 40vh;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+
+  &__info {
+    text-align: center;
+    color: $primary;
+  }
+
+  &__price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: $secondary;
+  }
+
+  &__priceIcon {
+    color: $secondary;
+    font-size: 0.8rem;
+  }
+}

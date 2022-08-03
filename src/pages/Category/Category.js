@@ -4,6 +4,7 @@ import { collection, getDocs, query, where, orderBy, limit } from 'firebase/fire
 import { db } from './../../firebase.config';
 import { toast } from 'react-toastify';
 import ListingItem from '../../components/ListingItem/ListingItem';
+import styles from './Category.module.scss';
 
 function Category() {
   const [listings, setListings] = useState(null)
@@ -50,7 +51,7 @@ function Category() {
 
 
   return (
-    <div className='container'>
+    <div >
       <h2>
         {params.categoryName === 'rent'
           ? 'Rent your dream car'
@@ -62,7 +63,7 @@ function Category() {
         : listings && listings.length > 0
           ? <>
 
-            <ul>
+            <section className={styles.cars}>
               {listings.map((listing) => (
                 <ListingItem
                   key={listing.id}
@@ -70,7 +71,7 @@ function Category() {
                   listing={listing.data}
                 />
               ))}
-            </ul>
+            </section>
           </>
           : <p>No cars for {params.categoryName}</p>
       }

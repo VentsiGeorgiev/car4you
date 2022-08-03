@@ -41,7 +41,7 @@ function Listing() {
   }
 
   return (
-    <div className="container">
+    <div>
 
       <div className='carslider'>
         {listing && (
