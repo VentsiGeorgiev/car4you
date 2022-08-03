@@ -49,7 +49,7 @@ function Offers() {
 
 
   return (
-    <div className='container'>
+    <div >
       <h2>
         Offers
       </h2>
@@ -58,7 +58,7 @@ function Offers() {
         : listings && listings.length > 0
           ? <>
 
-            <ul>
+            <section className='cars'>
               {listings.map((listing) => (
                 <ListingItem
                   key={listing.id}
@@ -66,7 +66,7 @@ function Offers() {
                   listing={listing.data}
                 />
               ))}
-            </ul>
+            </section>
           </>
           : <p>No Current Offers</p>
       }

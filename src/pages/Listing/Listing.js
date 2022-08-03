@@ -59,7 +59,7 @@ function Listing() {
                     width: '100%',
                     margin: '0 auto'
                   }}>
-                    <img className='sliderImgs' src={listing.imgUrls[index]} />
+                    <img className='sliderImgs' alt={listing.make} src={listing.imgUrls[index]} />
                   </div>
 
                 </SwiperSlide>

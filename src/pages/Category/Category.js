@@ -4,7 +4,6 @@ import { collection, getDocs, query, where, orderBy, limit } from 'firebase/fire
 import { db } from './../../firebase.config';
 import { toast } from 'react-toastify';
 import ListingItem from '../../components/ListingItem/ListingItem';
-import styles from './Category.module.scss';
 
 function Category() {
   const [listings, setListings] = useState(null)
@@ -63,7 +62,7 @@ function Category() {
         : listings && listings.length > 0
           ? <>
 
-            <section className={styles.cars}>
+            <section className='cars'>
               {listings.map((listing) => (
                 <ListingItem
                   key={listing.id}
