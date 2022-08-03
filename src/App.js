@@ -14,6 +14,7 @@ import CreateListing from "./pages/CreateListing/CreateListing";
 import Listing from "./pages/Listing/Listing";
 import Contact from "./pages/Contact/Contact";
 import Edit from "./pages/Edit/Edit";
+import Footer from "./components/Footer/Footer";
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
         </Routes>
       </Layout>
       <ToastContainer />
+      <Footer />
     </>
 
   );

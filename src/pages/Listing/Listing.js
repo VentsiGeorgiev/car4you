@@ -6,6 +6,7 @@ import { db } from '../../firebase.config';
 import { FaShareAlt } from 'react-icons/fa';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import styles from './Listing.module.scss'
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -41,7 +42,7 @@ function Listing() {
   }
 
   return (
-    <div>
+    <>
 
       <div className='carslider'>
         {listing && (
@@ -50,7 +51,6 @@ function Listing() {
             slidesPerView={1}
             pagination={{ clickable: true }}
             navigation
-          // style={{ height: '40vh' }}
           >
             {listing.imgUrls.map((url, index) => {
               return (
@@ -70,21 +70,22 @@ function Listing() {
 
       </div>
 
+      <section className={styles.details}>
+        <div className={styles.details__shareIcon} onClick={
+          () => {
+            navigator.clipboard.writeText(window.location.href)
+            setShareLinkCopied(true)
+            setTimeout(() => {
+              setShareLinkCopied(false)
+            }, [2000])
+          }}
+        >
+          <FaShareAlt />
+          {shareLinkCopied && <p>Link copied!</p>}
+        </div>
 
-      <div onClick={
-        () => {
-          navigator.clipboard.writeText(window.location.href)
-          setShareLinkCopied(true)
-          setTimeout(() => {
-            setShareLinkCopied(false)
-          }, [2000])
-        }}>
-        <FaShareAlt />
-      </div>
 
-      {shareLinkCopied && <p>Link copied!</p>}
 
-      <div>
         <p>For {listing.type === 'rent' ? 'Rent' : 'Sale'}</p>
         <h3>{listing.make} {listing.model}</h3>
         <p>Price: {listing.offer ? listing.discountedPrice : listing.regularPrice}</p>
@@ -99,8 +100,8 @@ function Listing() {
         {auth.currentUser?.uid !== listing.userRef && (
           <Link to={`/contact/${listing.userRef}?listingName=${listing.make}`} >Contact owner</Link>
         )}
-      </div>
-    </div>
+      </section>
+    </>
   )
 }
 

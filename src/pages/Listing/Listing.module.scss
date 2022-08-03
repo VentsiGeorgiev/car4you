@@ -1,0 +1,15 @@
+@import '../../styles/variables.scss';
+
+.details {
+  max-width: 40%;
+  margin: 0 auto;
+
+  &__shareIcon {
+    text-align: right;
+    cursor: pointer;
+
+    &:hover {
+      color: $secondary;
+    }
+  }
+}

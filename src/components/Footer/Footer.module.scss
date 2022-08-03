@@ -1,0 +1,32 @@
+@import '../../styles/variables.scss';
+
+.footer {
+  background-color: $primary;
+  color: $white;
+  padding: 0 20px;
+}
+
+.wrapper {
+  display: grid;
+  justify-content: center;
+  padding: 1rem 0;
+  gap: 1rem;
+
+  &__section {
+    text-align: center;
+  }
+
+  @include breakpoint(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.credentials {
+  text-align: center;
+}
