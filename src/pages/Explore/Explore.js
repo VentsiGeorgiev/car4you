@@ -1,32 +1,38 @@
 import { Link } from 'react-router-dom';
 import rentACarImg from './../../assets/jpg/rentACar.jpg';
 import buyACarImg from './../../assets/jpg/buyACar.jpg';
+import styles from './Explore.module.scss';
 
 
 function Explore() {
   return (
-    <div className='container'>
-      <h1>Explore</h1>
-      <h2>Categories</h2>
-      <div>
+    <section className={styles.explore}>
 
-        <div>
+      <div className={styles.explore__text}>
+        <h1 className={styles.explore__title}>Find your next car</h1>
+        <p className={styles.explore__subtext}>The official #1 site to buy, sell or rent new and used cars. <span className='divider'>Simple, easy, quick!</span> </p>
+      </div>
+
+
+      <div className={styles.categories}>
+
+        <div className={styles.category}>
           <Link to='/category/rent'>
-            <img src={rentACarImg} alt="Rent a car" />
+            <img className={styles.category__image} src={rentACarImg} alt="Rent a car" />
+            <h2 className={styles.category__title}>Rent a car</h2>
           </Link>
-          <h2>Rent a car</h2>
         </div>
 
-        <div>
+        <div className={styles.category}>
           <Link to='/category/sale'>
-            <img src={buyACarImg} alt="Buy a car" />
+            <img className={styles.category__image} src={buyACarImg} alt="Buy a car" />
+            <h2 className={styles.category__title}>Buy a car</h2>
           </Link>
-          <h2>Buy a car</h2>
         </div>
 
       </div>
 
-    </div>
+    </section>
   )
 }
 

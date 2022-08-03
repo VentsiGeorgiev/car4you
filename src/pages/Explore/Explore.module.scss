@@ -1,0 +1,65 @@
+@import '../../styles/variables.scss';
+
+.explore {
+
+  &__text {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: $primary;
+  }
+
+  &__subtext {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  &__subtext span {
+    display: block;
+    font-weight: 500;
+    font-size: 1.8rem;
+  }
+
+}
+
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @include breakpoint(md) {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.category {
+
+  &__image {
+    width: 40vh;
+    height: 30vh;
+    object-fit: cover;
+    border-radius: 10px;
+
+    &:hover {
+      transform: scale(1.02);
+      transition: 0.3s ease all;
+    }
+  }
+
+  &__title {
+    color: $primary;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 500;
+  }
+
+
+
+
+}
