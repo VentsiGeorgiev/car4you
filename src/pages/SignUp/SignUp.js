@@ -56,65 +56,64 @@ function SignUp() {
 
 
   return (
-    <div className={styles.container}>
+    <section className={styles.signUp}>
+      <h1 className={styles.title}>Sing Up</h1>
+      <form onSubmit={onSubmit} className={styles.form}>
 
-      <main>
-        <h1 className={styles.title}>Sing Up</h1>
-        <form onSubmit={onSubmit} className={styles.form}>
+        <div className={styles.field}>
+          <FaIdCardAlt />
+          <input
+            className='form-input'
+            type="text"
+            placeholder="Name"
+            id="name"
+            value={name}
+            onChange={onChange}
+          />
+        </div>
 
-          <div className={styles.field}>
-            <FaIdCardAlt />
-            <input
-              type="text"
-              placeholder="Name"
-              id="name"
-              value={name}
-              onChange={onChange}
-            />
-          </div>
+        <div className={styles.field}>
+          <FaUser />
+          <input
+            className='form-input'
+            type="email"
+            placeholder="Email"
+            id="email"
+            value={email}
+            onChange={onChange}
+          />
+        </div>
 
-          <div className={styles.field}>
-            <FaUser />
-            <input
-              type="email"
-              placeholder="Email"
-              id="email"
-              value={email}
-              onChange={onChange}
-            />
-          </div>
-
-          <div className={styles.field}>
-            <FaLock />
-            <input
-              type={showPassword ? 'text' : 'password'}
-              placeholder="Password"
-              id="password"
-              value={password}
-              onChange={onChange}
-            />
-            <FaEye className={styles.link} onClick={() => setShowPassword((prev) => !prev)} />
-          </div>
+        <div className={styles.field}>
+          <FaLock />
+          <input
+            className='form-input'
+            type={showPassword ? 'text' : 'password'}
+            placeholder="Password"
+            id="password"
+            value={password}
+            onChange={onChange}
+          />
+          <FaEye className={styles.link} onClick={() => setShowPassword((prev) => !prev)} />
+        </div>
 
 
-          {/* <div className={styles.forgotPassword}>
+        {/* <div className={styles.forgotPassword}>
             <Link to="/forgot-password">Forgot Password?</Link>
           </div> */}
 
-          <div>
-            <button className={styles['sign-in']}>Sign Up</button>
-          </div>
+        <div>
+          <button className='btn btn-primary'>Sign Up</button>
+        </div>
 
-          <OAuth />
+        <OAuth />
 
-          <div>
-            <p>Already have an account ?</p>
-            <Link to='/sign-in'>Sign in.</Link>
-          </div>
-        </form>
-      </main>
-
-    </div>
+        <div>
+          <p>Already have an account ?</p>
+          <Link className='form-link' to='/sign-in'>Sign in.</Link>
+        </div>
+      </form>
+    </section>
   )
 }
 
