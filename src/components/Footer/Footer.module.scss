@@ -27,6 +27,29 @@
   gap: 1rem;
 }
 
+.footer__section {
+  text-align: center;
+}
+
+.footer__link {
+  color: $white;
+}
+
+.footer__link:hover {
+  color: $secondary;
+}
+
+
+
 .credentials {
   text-align: center;
+  padding: 20px 0;
+}
+
+.red {
+  color: $secondary;
+}
+
+.credentials a {
+  color: $secondary;
 }

@@ -7,7 +7,7 @@ function Footer() {
     <footer className={styles.footer}>
       <div className="container">
         <div className={styles.wrapper}>
-          <section className="footer__section">
+          <section className={styles.footer__section}>
             <h3>Get In Touch</h3>
             <ul>
               <li>123 Street, Sofia Bulgaria</li>
@@ -16,7 +16,7 @@ function Footer() {
             </ul>
           </section>
 
-          <section className="footer__section">
+          <section className={styles.footer__section}>
             <h3>Social</h3>
             <ul className={styles.social}>
               <li><FaFacebook /></li>
@@ -25,17 +25,17 @@ function Footer() {
             </ul>
           </section>
 
-          <section className="footer__section">
+          <section className={styles.footer__section}>
             <h3>Popular Links</h3>
             <ul>
-              <li><Link to='/'>Home</Link></li>
-              <li><Link to='/offers'>Offers</Link></li>
-              <li><Link to='/profile'>Profile</Link></li>
+              <li><Link className={styles.footer__link} to='/'>Home</Link></li>
+              <li><Link className={styles.footer__link} to='/offers'>Offers</Link></li>
+              <li><Link className={styles.footer__link} to='/profile'>Profile</Link></li>
             </ul>
 
           </section>
         </div>
-        <p className={styles.credentials}><FaCopyright /> Car4You. All Rights Reserver. Designed By VentsiGeorgiev</p>
+        <p className={styles.credentials}><FaCopyright /> Car<span className={styles.red}>4</span>You. All Rights Reserver. Designed By <a target='_blank' href='https://github.com/VentsiGeorgiev'>VentsiGeorgiev</a> </p>
       </div>
     </footer>
   )

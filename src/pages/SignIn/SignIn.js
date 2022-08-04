@@ -44,52 +44,52 @@ function SignIn() {
 
 
   return (
-    <div className={styles.container}>
+    <section className='sing-in'>
+      <h1 className={styles.title}>Sing In</h1>
 
-      <main>
-        <h1 className={styles.title}>Sing In</h1>
-        <form onSubmit={onSubmit} className={styles.form}>
-          <div className={styles.field}>
-            <FaUser />
-            <input
-              type="email"
-              placeholder="Email"
-              id="email"
-              value={email}
-              onChange={onChange}
-            /></div>
-          <div className={styles.field}>
+      <form onSubmit={onSubmit} className={styles.form}>
+        <div className={styles.field}>
+          <FaUser />
+          <input
+            type="email"
+            placeholder="Email"
+            className='form-input'
+            id="email"
+            value={email}
+            onChange={onChange}
+          /></div>
+        <div className={styles.field}>
 
-            <FaLock />
-            <input
-              type={showPassword ? 'text' : 'password'}
-              placeholder="Password"
-              id="password"
-              value={password}
-              onChange={onChange}
-            />
-            <FaEye className={styles.link} onClick={() => setShowPassword((prev) => !prev)} />
-          </div>
+          <FaLock />
+          <input
+            type={showPassword ? 'text' : 'password'}
+            className='form-input'
+            placeholder="Password"
+            id="password"
+            value={password}
+            onChange={onChange}
+
+          />
+          <FaEye className={styles.link} onClick={() => setShowPassword((prev) => !prev)} />
+        </div>
 
 
-          <div className={styles['forgot-password']}>
-            <Link to="/forgot-password">Forgot Password?</Link>
-          </div>
+        <div className='forgot-password'>
+          <Link className='form-link' to="/forgot-password">Forgot Password?</Link>
+        </div>
 
-          <div>
-            <button>Sign In</button>
-          </div>
+        <div>
+          <button className='btn btn-primary'>Sign In</button>
+        </div>
 
-          <OAuth />
+        <OAuth />
 
-          <div>
-            <p>Don't have an account yet?</p>
-            <Link to='/sign-up'>Create one.</Link>
-          </div>
-        </form>
-      </main>
-
-    </div>
+        <div>
+          <p>Don't have an account yet?</p>
+          <Link className='form-link' to='/sign-up'>Create one.</Link>
+        </div>
+      </form>
+    </section>
   )
 }
 
