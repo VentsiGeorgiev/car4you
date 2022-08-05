@@ -12,7 +12,7 @@ export const ClientsProvider = ({ children }) => {
       const getClients = async () => {
         const response = await fetch('https://dummyapi.io/data/v1/user?limit=5', {
           headers: {
-            'app-id': '62eb943cb5812612bf42b52b'
+            'app-id': `${process.env.REACT_APP_API_KEY}`
           }
         })
         const result = await response.json()

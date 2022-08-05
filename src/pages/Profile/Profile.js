@@ -19,7 +19,7 @@ function Profile() {
   });
 
 
-  const { name, email } = formData;
+  const { name } = formData;
 
   const navigate = useNavigate();
 
