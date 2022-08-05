@@ -1,0 +1,13 @@
+@import '../../styles/variables.scss';
+
+.contact {
+  min-height: 66vh;
+}
+
+a {
+  color: $primary;
+
+  &:hover {
+    color: $white;
+  }
+}

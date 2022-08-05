@@ -220,7 +220,6 @@ function Edit() {
   return (
     <div className='container'>
       <h2>Edit listing</h2>
-
       <form onSubmit={onSubmit}>
 
         <label className='formLabel'>Sell / Rent</label>
@@ -366,7 +365,8 @@ function Edit() {
           multiple
         />
 
-        <button type='submit'>Edit Listing</button>
+        <button className='btn btn-primary' type='submit'>Edit Listing</button>
+
       </form>
     </div>
   )

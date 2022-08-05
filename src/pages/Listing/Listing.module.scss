@@ -13,3 +13,11 @@
     }
   }
 }
+
+.contactOwnerLink {
+  color: $primary;
+
+  &:hover {
+    color: $white;
+  }
+}

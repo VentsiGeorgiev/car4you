@@ -3,6 +3,7 @@ import { useParams, useSearchParams } from 'react-router-dom';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase.config';
 import { toast } from 'react-toastify';
+import styles from './Contact.module.scss';
 
 function Contact() {
   const [message, setMessage] = useState('');
@@ -32,25 +33,28 @@ function Contact() {
   }
 
   return (
-    <div className='container'>
+    <div className={styles.contact}>
       <h2>Contact Owner</h2>
       {owner !== null && (
         <>
           <div>
-            <h3>{owner?.name}</h3>
+            <h3>Owner name: {owner?.name}</h3>
           </div>
-          <form>
+          <form className={styles.contactForm}>
             <label htmlFor='message' className='formLabel'>
               Message
             </label>
-            <textarea
-              name='message'
-              id='message'
-              value={message}
-              onChange={onChange}
-            >
-            </textarea>
-            <button type='button'>
+            <div>
+              <textarea
+                className='form-input'
+                name='message'
+                id='message'
+                value={message}
+                onChange={onChange}
+              >
+              </textarea></div>
+
+            <button className='btn btn-primary btn-contact' type='button'>
               <a href={`mailto:${owner.email}?Subject=${searchParams.get('listingName')}&body=${message}`} >Send Message</a>
             </button>
 

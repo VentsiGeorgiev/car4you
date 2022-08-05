@@ -98,7 +98,10 @@ function Listing() {
           <li>insurance: {listing.insurance ? 'Yes' : 'No'}</li>
         </ul>
         {auth.currentUser?.uid !== listing.userRef && (
-          <Link to={`/contact/${listing.userRef}?listingName=${listing.make}`} >Contact owner</Link>
+          <button type='button' className='btn btn-primary' >
+            <Link className={styles.contactOwnerLink} to={`/contact/${listing.userRef}?listingName=${listing.make}`} >Contact owner</Link>
+          </button>
+
         )}
       </section>
     </>
