@@ -2,9 +2,14 @@ import { Link } from 'react-router-dom';
 import rentACarImg from './../../assets/jpg/rentACar.jpg';
 import buyACarImg from './../../assets/jpg/buyACar.jpg';
 import styles from './Explore.module.scss';
+import { useContext } from 'react';
+import ClientsContext from '../../context/ClientsContext';
 
 
 function Explore() {
+
+  const { clients } = useContext(ClientsContext);
+
   return (
     <section className={styles.explore}>
 
@@ -30,6 +35,12 @@ function Explore() {
           </Link>
         </div>
 
+      </div>
+
+      <div className="clients">
+        {clients.map((client) => (
+          <p>{client.firstName}</p>
+        ))}
       </div>
 
     </section>

@@ -35,7 +35,7 @@ function Footer() {
 
           </section>
         </div>
-        <p className={styles.credentials}><FaCopyright /> Car<span className={styles.red}>4</span>You. All Rights Reserver. Designed By <a target='_blank' href='https://github.com/VentsiGeorgiev'>VentsiGeorgiev</a> </p>
+        <p className={styles.credentials}><FaCopyright /> Car<span className={styles.red}>4</span>You. All Rights Reserved. Designed By <a target='_blank' href='https://github.com/VentsiGeorgiev'>VentsiGeorgiev</a> </p>
       </div>
     </footer>
   )

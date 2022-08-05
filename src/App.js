@@ -15,6 +15,7 @@ import Listing from "./pages/Listing/Listing";
 import Contact from "./pages/Contact/Contact";
 import Edit from "./pages/Edit/Edit";
 import Footer from "./components/Footer/Footer";
+import { ClientsProvider } from "./context/ClientsContext";
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
     <>
       <Layout>
         <Routes>
-          <Route path="/" element={<Explore />}></Route>
+          <Route path="/" element={<ClientsProvider><Explore /></ClientsProvider>}></Route>
           <Route path="/offers" element={<Offers />}></Route>
           <Route path="/category/:categoryName" element={<Category />}></Route>
           <Route path="/profile" element={<PrivateRoute />}>

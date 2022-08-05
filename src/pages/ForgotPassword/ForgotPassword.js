@@ -23,11 +23,12 @@ function ForgotPassword() {
 
   }
   return (
-    <main className='container'>
+    <div className='forgotPassword'>
       <h2>Forgot Password</h2>
       <h4>Send Reset Link to</h4>
       <form onSubmit={onSubmit}>
         <input
+          className='form-input'
           type='email'
           placeholder='Email'
           id='email'
@@ -35,10 +36,10 @@ function ForgotPassword() {
           onChange={onChange}
         />
         <div>
-          <button>Send</button>
+          <button className='btn btn-primary'>Send</button>
         </div>
       </form>
-    </main>
+    </div>
   )
 }
 
