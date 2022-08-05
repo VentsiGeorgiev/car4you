@@ -1,0 +1,28 @@
+@import '../../styles/variables.scss';
+
+.client {
+  border: 1px solid $primary;
+  border-radius: 6px;
+  display: flex;
+  padding: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin-bottom: 40px;
+
+  &__image {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 6px
+  }
+
+  &__name {
+    color: $primary;
+    font-weight: 600;
+    font-size: 1rem
+  }
+
+  &__text {
+    font-style: italic;
+  }
+}

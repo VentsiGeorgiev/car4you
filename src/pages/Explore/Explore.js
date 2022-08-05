@@ -4,6 +4,7 @@ import buyACarImg from './../../assets/jpg/buyACar.jpg';
 import styles from './Explore.module.scss';
 import { useContext } from 'react';
 import ClientsContext from '../../context/ClientsContext';
+import ClientsTestimonial from '../../components/ClientsTestimonial/ClientsTestimonial';
 
 
 function Explore() {
@@ -37,10 +38,16 @@ function Explore() {
 
       </div>
 
-      <div className="clients">
-        {clients.map((client) => (
-          <p>{client.firstName}</p>
-        ))}
+      <div className={styles.clients}>
+
+        <h2 className={styles.clients__title}>What Our Clients Say</h2>
+        <h4 className={styles.clients__subtitle}>Testimonials</h4>
+        <div className={styles.clients__cards}>
+          {clients.map((client) => (
+            <ClientsTestimonial key={client.id} client={client} />
+          ))}
+
+        </div>
       </div>
 
     </section>
