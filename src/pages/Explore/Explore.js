@@ -43,7 +43,7 @@ function Explore() {
         <h2 className={styles.clients__title}>What Our Clients Say</h2>
         <h4 className={styles.clients__subtitle}>Testimonials</h4>
         <div className={styles.clients__cards}>
-          {clients.map((client) => (
+          {clients && clients.map((client) => (
             <ClientsTestimonial key={client.id} client={client} />
           ))}
 
