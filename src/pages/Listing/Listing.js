@@ -4,15 +4,9 @@ import { getDoc, doc } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import { db } from '../../firebase.config';
 import { FaShareAlt } from 'react-icons/fa';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import styles from './Listing.module.scss'
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import 'swiper/css/a11y';
+import ImageSlider from '../../components/ImageSlider/ImageSlider';
+import styles from './Listing.module.scss';
 
 function Listing() {
   const [listing, setListing] = useState(null)
@@ -43,32 +37,11 @@ function Listing() {
 
   return (
     <>
-
-      <div className='carslider'>
-        {listing && (
-          <Swiper
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
-            slidesPerView={1}
-            pagination={{ clickable: true }}
-            navigation
-          >
-            {listing.imgUrls.map((url, index) => {
-              return (
-                <SwiperSlide key={index}>
-                  <div style={{
-                    width: '100%',
-                    margin: '0 auto'
-                  }}>
-                    <img className='sliderImgs' alt={listing.make} src={listing.imgUrls[index]} />
-                  </div>
-
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
-        )}
-
-      </div>
+      {listing &&
+        <div className={styles.sliderContainer}>
+          <ImageSlider listing={listing.imgUrls} />
+        </div>
+      }
 
       <section className={styles.details}>
         <div className={styles.details__shareIcon} onClick={
