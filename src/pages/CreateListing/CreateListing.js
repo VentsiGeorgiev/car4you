@@ -216,6 +216,7 @@ function CreateListing() {
           id='make'
           value={make}
           onChange={onMutate}
+          required
         />
 
 
@@ -225,6 +226,7 @@ function CreateListing() {
           id='model'
           value={model}
           onChange={onMutate}
+          required
         />
 
         <label className='formLabel'>km</label>
@@ -233,6 +235,7 @@ function CreateListing() {
           id='km'
           value={km}
           onChange={onMutate}
+          required
           min='0'
           max='1000000'
         />
@@ -243,6 +246,7 @@ function CreateListing() {
           id='year'
           value={year}
           onChange={onMutate}
+          required
           min='1960'
           max='2022'
         />
@@ -255,6 +259,7 @@ function CreateListing() {
             id='insurance'
             value={true}
             onClick={onMutate}
+            required
           >
             Yes
           </button>
@@ -264,6 +269,7 @@ function CreateListing() {
             id='insurance'
             value={false}
             onClick={onMutate}
+            required
           >
             No
           </button>
@@ -275,6 +281,7 @@ function CreateListing() {
           id='address'
           value={address}
           onChange={onMutate}
+          required
         />
 
         <label className='formLabel'>Offer</label>
@@ -306,6 +313,7 @@ function CreateListing() {
           id='regularPrice'
           value={regularPrice}
           onChange={onMutate}
+          required
         />
 
         {offer && (
@@ -316,6 +324,7 @@ function CreateListing() {
               id='discountedPrice'
               value={discountedPrice}
               onChange={onMutate}
+              required
             />
           </>
         )}
@@ -328,6 +337,7 @@ function CreateListing() {
           max='6'
           accept='.jpg,.png,.jpeg'
           multiple
+          required
         />
 
         <button className='btn btn-primary btn-form' type='submit'>Create Listing</button>

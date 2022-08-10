@@ -34,6 +34,7 @@ function ForgotPassword() {
           id='email'
           value={email}
           onChange={onChange}
+          required
         />
         <div>
           <button className='btn btn-primary'>Send</button>

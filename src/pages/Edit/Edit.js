@@ -251,6 +251,7 @@ function Edit() {
           id='make'
           value={make}
           onChange={onMutate}
+          required
         />
 
 
@@ -260,6 +261,7 @@ function Edit() {
           id='model'
           value={model}
           onChange={onMutate}
+          required
         />
 
         <label className='formLabel'>km</label>
@@ -270,6 +272,7 @@ function Edit() {
           onChange={onMutate}
           min='0'
           max='1000000'
+          required
         />
 
         <label className='formLabel'>Year</label>
@@ -280,6 +283,7 @@ function Edit() {
           onChange={onMutate}
           min='1960'
           max='2022'
+          required
         />
 
         <div>
@@ -290,6 +294,7 @@ function Edit() {
             id='insurance'
             value={true}
             onClick={onMutate}
+            required
           >
             Yes
           </button>
@@ -299,6 +304,7 @@ function Edit() {
             id='insurance'
             value={false}
             onClick={onMutate}
+            required
           >
             No
           </button>
@@ -310,6 +316,7 @@ function Edit() {
           id='address'
           value={address}
           onChange={onMutate}
+          required
         />
 
         <label className='formLabel'>Offer</label>
@@ -320,6 +327,7 @@ function Edit() {
             id='offer'
             value={true}
             onClick={onMutate}
+            required
           >
             Yes
           </button>
@@ -330,6 +338,7 @@ function Edit() {
             id='offer'
             value={false}
             onClick={onMutate}
+            required
           >
             No
           </button>
@@ -341,6 +350,7 @@ function Edit() {
           id='regularPrice'
           value={regularPrice}
           onChange={onMutate}
+          required
         />
 
         {offer && (
@@ -351,6 +361,7 @@ function Edit() {
               id='discountedPrice'
               value={discountedPrice}
               onChange={onMutate}
+              required
             />
           </>
         )}
@@ -363,6 +374,7 @@ function Edit() {
           max='6'
           accept='.jpg,.png,.jpeg'
           multiple
+          required
         />
 
         <button className='btn btn-primary' type='submit'>Edit Listing</button>

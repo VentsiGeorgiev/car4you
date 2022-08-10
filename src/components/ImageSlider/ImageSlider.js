@@ -12,7 +12,7 @@ function ImageSlider({ listing }) {
   }
 
   const goToPrevious = () => {
-    if (currentIndex != 0) {
+    if (currentIndex !== 0) {
       setCurrentIndex(prev => prev - 1)
     }
   }

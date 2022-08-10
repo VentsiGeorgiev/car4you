@@ -69,6 +69,7 @@ function SignUp() {
             id="name"
             value={name}
             onChange={onChange}
+            required
           />
         </div>
 
@@ -81,6 +82,7 @@ function SignUp() {
             id="email"
             value={email}
             onChange={onChange}
+            required
           />
         </div>
 
@@ -93,6 +95,7 @@ function SignUp() {
             id="password"
             value={password}
             onChange={onChange}
+            required
           />
           <FaEye className={styles.link} onClick={() => setShowPassword((prev) => !prev)} />
         </div>

@@ -57,6 +57,7 @@ function SignIn() {
             id="email"
             value={email}
             onChange={onChange}
+            required
           /></div>
         <div className={styles.field}>
 
@@ -68,7 +69,7 @@ function SignIn() {
             id="password"
             value={password}
             onChange={onChange}
-
+            required
           />
           <FaEye className={styles.link} onClick={() => setShowPassword((prev) => !prev)} />
         </div>
