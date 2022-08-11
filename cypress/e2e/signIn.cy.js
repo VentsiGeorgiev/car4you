@@ -9,6 +9,12 @@ describe('User Sign In', () => {
     cy.get('#password')
       .type('test123')
     cy.get("[data-test='singInBtn']")
-    // .click()
+      .click().wait(2000)
+
+    cy.get('.Header_header__content__nav__5NdGV > ul > :nth-child(3) > a').click()
+
+    cy.get('#name')
+      .should('exist')
+
   })
 })

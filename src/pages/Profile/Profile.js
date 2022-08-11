@@ -98,7 +98,7 @@ function Profile() {
 
   return (
 
-    <>
+    <section className={styles.profile__section}>
       <div className={styles.profile}>
         <h2>My Profile</h2>
         <button
@@ -167,7 +167,7 @@ function Profile() {
         </div>
       )}
 
-    </>
+    </section>
   )
 }
 export default Profile
