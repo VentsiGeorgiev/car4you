@@ -80,7 +80,7 @@ function SignIn() {
         </div>
 
         <div>
-          <button className='btn btn-primary'>Sign In</button>
+          <button data-test="singInBtn" className='btn btn-primary'>Sign In</button>
         </div>
 
         <OAuth />
