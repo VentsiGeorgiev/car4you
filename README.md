@@ -25,3 +25,7 @@ Then choose:
 - E2E Testing
 - Choose a Browser and start
 - Browse in Specs for E2E tests
+
+## App structure:
+
+![image](/src/assets/jpg/car4you.jpg)
